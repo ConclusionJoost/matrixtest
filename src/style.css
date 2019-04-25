@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+    color:lime;
+}
+
+td {
+    width: 7px;
+    height: 7px;
+    background-color:#808080;
+    border: 1px solid black;
+    padding:0;
+    margin:0;
+    color:black;
+}

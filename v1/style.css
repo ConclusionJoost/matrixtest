@@ -1,0 +1,11 @@
+body {
+    background-color: black;
+    color:lime;
+}
+
+td {
+    width:115px;
+    height: 15px;
+    background-color:#808080;
+    border: 1px solid black;
+}
