@@ -1,3 +1,5 @@
+const radian = 180/Math.PI;
+
 (function () {
     this.settings = {
         maxvalue: 128,
@@ -27,7 +29,7 @@
         maxRows = 64,
         speed = 20,
         cycle = 0,
-        gravity = 0.0005,
+        gravity = 0.005,
         defaultValue = "#333333",
         defaultGlowValue = "#FFFFFF";
 
@@ -43,7 +45,7 @@
 
         objectList[objectList.length] = new BoardObject(1, "dot1", 1, 0, 0, true, 15, 15, new RgbColor("#FF6666"))
         objectList[objectList.length] = new BoardObject(2, "dot2", 1, 0, 0, true, 50, 35, new RgbColor("#FF6666"))
-        objectList[objectList.length] = new BoardObject(3, "ball1", 1, 0.5, 150, false, 4, 23, new RgbColor("#9999FF"))
+        objectList[objectList.length] = new BoardObject(3, "ball1", 1, 0.5, 35, false, 4, 23, new RgbColor("#9999FF"))
         //objectList[objectList.length] = new BoardObject(4, "ball2", 1, 0.5, 270, false, 20, 42, new RgbColor("#9999FF"))
 
         matrix.Init(maxCells, maxRows, defaultValue);
@@ -84,8 +86,8 @@
     }
 
     function update() {
-        BoundaryBehaviour(objectList, maxRows, maxCells);
         GravityBehaviour(objectList,gravity)
+        BoundaryBehaviour(objectList, maxRows, maxCells);
         this.checkCollisions();
         this.setBoardObjects();
     }

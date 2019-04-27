@@ -6,9 +6,9 @@ const moveObject = element => {
     if (element.fixed) { return }
     var v = Math.sqrt(2 * element.ke) / element.massa;
 
-    var radians = element.direction / (180 / Math.PI)
-    var xdelta = v * Math.sin(radians)
-    var ydelta = v * Math.cos(radians)
+    var radians = element.direction / radian
+    var xdelta = v * Math.cos(radians)
+    var ydelta = v * Math.sin(radians)
 
     //console.debug(`v ${v}, direction ${element.direction}, radians ${radians}: xdelta ${xdelta}, ydelta ${ydelta}`)
     element.xpos += xdelta;

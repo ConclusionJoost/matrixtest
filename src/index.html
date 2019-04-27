@@ -26,35 +26,29 @@
     <script src="components/boundaryBehaviour.js"></script>
     <script src="components/gravityBehaviour.js"></script>
     <script src="script.js"></script>
-    <!-- <script>
-    var el = new BoardObject(1,"test1",1, 1, 230, false, 0, 0, "color") ;
-    bounceSolidObject(el, 90) ;
-    console.log(`new el.direction 230 bij 90 exp=130 =>: ${el.direction}`);
-
-el = new BoardObject(1,"test2",1, 1, 140, false, 0, 0, "color") ;
-bounceSolidObject(el, 0) ;
-console.log(`new el.direction 140 bij 0 exp=40 =>: ${el.direction}`);
-
-el = new BoardObject(1,"test3",1, 1, 325, false, 0, 0, "color") ;
-bounceSolidObject(el, 90) ;
-console.log(`new el.direction 325 bij 90 exp=35 =>: ${el.direction}`);
-
-el = new BoardObject(1,"test4",1, 1, 235, false, 0, 0, "color") ;
-bounceSolidObject(el, 00) ;
-console.log(`new el.direction 325 bij 0 exp=305 =>: ${el.direction}`);
-
-el = new BoardObject(1,"test5",1, 1, 280, false, 0, 0, "color") ;
-bounceSolidObject(el, 135) ;
-console.log(`new el.direction 280 bij 135 exp=170 =>: ${el.direction}`);
-
-el = new BoardObject(1,"test6",1, 1, 0, false, 0, 0, "color") ;
-bounceSolidObject(el, 305) ;
-console.log(`new el.direction 0 bij 305 exp=0 =>: ${el.direction}`);
-
-el = new BoardObject(1,"test6",1, 1, 190, false, 0, 0, "color") ;
-bounceSolidObject(el, 305) ;
-console.log(`new el.direction 190 bij 305 exp=0 =>: ${el.direction}`); 
-    </script>-->
+    <script>
+        var res = [];
+        var l = 7;
+        const digt =3
+          for(var i=0;i<360;i+=30){
+    var rad = i/radian;
+    var xl = Math.cos(rad) * l
+    var yl = Math.sin(rad) * l
+    var div = yl/xl
+    var xln = limit(xl)
+    var yln = limit(yl)
+    var dv = limit(div)
+    var hk = Math.atan(div) * radian//limit(Math.atan(yl/xl) * radian)
+            res[res.length] = {i,xln,yln,dv, hk}
+   }
+   console.table(res)
+   
+   
+   function limit(number){
+       if(number>1000) return "[-BIG-]"
+       return new Intl.NumberFormat('nl-NL', { minimumFractionDigits: digt,maximumFractionDigits:digt }).format(number)
+   }
+   </script>
 </body>
 
 </html>
