@@ -14,6 +14,7 @@ const Matrix = function () {
         reset = () => {
             currentState = new Array(maxRows)
 
+            //for (var row = maxRows; row >=0 ; row--) {
             for (var row = 0; row < maxRows; row++) {
                 currentState[row] = new Array(maxCells);
                 for (var cell = 0; cell < maxCells; cell++) {
@@ -29,20 +30,26 @@ const Matrix = function () {
         },
 
         setValue = (row, cell, value) => {
-            row = Math.round(row)
-            cell = Math.round(cell)
-            validate(row, cell);
-
+            var rw = Math.round(row)
+            var cll = Math.round(cell)
+            validate(rw, cll);
             value = String(value)
-            currentState[row][cell] = value;
+            try {
+                currentState[rw][cll] = value;
+            }
+            catch (e) {
+                console.log(`x:${cll},y:${rw} : ${e}`)
+            }
         },
 
         validate = (row, cell) => {
             if (row >= maxRows) {
-                row = maxRows - 1;
+                console.warn(`Out of bounds: row = ${row} > ${maxRows}`)
+                row = 3//maxRows - 1;
                 // throw `Out of bounds: row = ${row} > ${maxRows}` 
             }
             if (cell >= maxCells) {
+                console.warn(`Out of bounds: cell = ${cell} >${maxCells}`)
                 cell = maxCells - 1;
                 //throw `Out of bounds: cell = ${cell} >${maxCells}` 
             }

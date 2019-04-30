@@ -17,7 +17,7 @@ const moveObject = element => {
 
 const bounceSolidObject = (element, bounceDirection) => {
     console.debug(`element '${element.name}':  direction : ${element.direction} , bounceDirection : ${bounceDirection}`)
-    console.log(`element '${element.name}' : x${element.xpos}, y${element.ypos}`)
+    console.log(`element '${element.name}' : x${limit(element.xpos)}, y${element.ypos}`)
 
     var relativeDirection = (360 + element.direction - bounceDirection) % 360
     if (relativeDirection >= 270 || relativeDirection <= 90) {

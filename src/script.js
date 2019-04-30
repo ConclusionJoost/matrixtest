@@ -86,7 +86,7 @@ const radian = 180/Math.PI;
     }
 
     function update() {
-        GravityBehaviour(objectList,gravity)
+        //GravityBehaviour(objectList,gravity)
         BoundaryBehaviour(objectList, maxRows, maxCells);
         this.checkCollisions();
         this.setBoardObjects();
@@ -126,3 +126,8 @@ const radian = 180/Math.PI;
     init();
 })();
 
+
+function limit(number){
+    if(number>1000) return "[-BIG-]"
+    return new Intl.NumberFormat('nl-NL', { minimumFractionDigits: digt,maximumFractionDigits:digt }).format(number)
+}
